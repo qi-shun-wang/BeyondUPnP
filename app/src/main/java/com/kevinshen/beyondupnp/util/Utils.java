@@ -15,8 +15,7 @@
  */
 package com.kevinshen.beyondupnp.util;
 
-import org.apache.http.conn.util.InetAddressUtils;
-
+import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Collections;
@@ -39,7 +38,8 @@ public class Utils {
                 for (InetAddress addr : addrs) {
                     if (!addr.isLoopbackAddress()) {
                         String sAddr = addr.getHostAddress().toUpperCase();
-                        boolean isIPv4 = InetAddressUtils.isIPv4Address(sAddr);
+                        boolean isIPv4 = !addr.isLoopbackAddress() && addr instanceof Inet4Address;
+//                        boolean isIPv4 = InetAddressUtils.isIPv4Address(sAddr);
                         if (useIPv4) {
                             if (isIPv4)
                                 return sAddr;
