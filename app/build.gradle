@@ -27,24 +27,40 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'http://4thline.org/m2'
+    }
+}
+
 dependencies {
-    //Cling library
-    compile files('libs/cling-core-2.0.1.jar')
-    compile files('libs/cling-support-2.0.1.jar')
-    compile files('libs/seamless-http-1.1.0.jar')
-    compile files('libs/seamless-util-1.1.0.jar')
-    compile files('libs/seamless-xml-1.1.0.jar')
-    //Jetty library
-    compile files('libs/jetty-client-8.1.12.v20130726.jar')
-    compile files('libs/jetty-continuation-8.1.12.v20130726.jar')
-    compile files('libs/jetty-http-8.1.12.v20130726.jar')
-    compile files('libs/jetty-io-8.1.12.v20130726.jar')
-    compile files('libs/jetty-security-8.1.12.v20130726.jar')
-    compile files('libs/jetty-server-8.1.12.v20130726.jar')
-    compile files('libs/jetty-servlet-8.1.12.v20130726.jar')
-    compile files('libs/jetty-util-8.1.12.v20130726.jar')
-    compile files('libs/servlet-api-3.0.jar')
-    compile files('libs/slf4j-jdk14-1.7.5.jar')
+    // Cling
+    compile group: 'org.fourthline.cling', name: 'cling-core', version:'2.1.1'
+    compile group: 'org.fourthline.cling', name: 'cling-support', version:'2.1.1'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version:'8.1.18.v20150929'
+    compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version:'8.1.18.v20150929'
+    compile group: 'org.eclipse.jetty', name: 'jetty-client', version:'8.1.18.v20150929'
+    compile group: 'org.slf4j', name: 'slf4j-jdk14', version:'1.7.14'
+
+//    //Cling library
+//    compile files('libs/cling-core-2.0.1.jar')
+//    compile files('libs/cling-support-2.0.1.jar')
+//    compile files('libs/seamless-http-1.1.0.jar')
+//    compile files('libs/seamless-util-1.1.0.jar')
+//    compile files('libs/seamless-xml-1.1.0.jar')
+//    //Jetty library
+//    compile files('libs/jetty-client-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-continuation-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-http-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-io-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-security-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-server-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-servlet-8.1.12.v20130726.jar')
+//    compile files('libs/jetty-util-8.1.12.v20130726.jar')
+//    compile files('libs/servlet-api-3.0.jar')
+//    compile files('libs/slf4j-jdk14-1.7.5.jar')
     //Android
     compile 'com.android.support:support-v4:21.0.+'
     compile 'com.android.support:support-v13:21.0.0'
